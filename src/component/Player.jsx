@@ -15,6 +15,7 @@ useEffect(() => {
   if (items) {
    setUrl(items);
   }
+  alert("Scroll down to see FullScreen Button")
 }, []);
 
   
