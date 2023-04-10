@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "c/:channelId",
+    path: "/:channelId",
     element: <Player/>,
   },
 ]);

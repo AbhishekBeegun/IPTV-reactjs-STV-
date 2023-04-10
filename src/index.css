@@ -16,4 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+vm-player {
+  --vm-control-scale: 1.75;
+}
 
