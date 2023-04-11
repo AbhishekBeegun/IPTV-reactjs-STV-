@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from "react"
 import axios from "axios"
-import IPTVJSON from "./api/SAMTV.json"
 import AllCountries from "./component/Country/AllCountries"
 import BackToTop from "./component/BackTop/BackToTop"
 import Loading from "./component/Loading"
@@ -9,6 +8,7 @@ import Navbar from "./component/Navbar/Navbar"
 import AllChanels from "./component/Chanels/AllChanels"
 import SeeMore from "./component/Seemore/SeeMore"
 
+// import IPTVJSON from "./api/SAMTV.json"
 function App() {
 
   // realdata
