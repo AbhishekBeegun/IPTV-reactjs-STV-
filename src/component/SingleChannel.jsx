@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 
-const SingleChannel = ({id,IMG ,name,live}) => {
+const SingleChannel = ({id,IMG ,name,live,Now}) => {
 
   const [tv, settv] = useState();
 
@@ -18,7 +18,7 @@ useEffect(() => {
   return (
     <a href={`/AbhishekBeegun🙈`} type="button"
     onClick={() => handleClick(live)} 
-    className="flex flex-col rounded-t-lg w-[150px] shadow-lg hover:scale-110 ease-in-out transition-all">
+    className="flex flex-col relative rounded-t-lg w-[150px] shadow-lg hover:scale-110 ease-in-out transition-all">
     <div className="w-full h-[100px]">
         <img className="w-full h-full rounded-t-lg object-cover" 
         src={IMG} />
@@ -26,6 +26,8 @@ useEffect(() => {
     <div className="flex flex-col bg-gray-900 items-center text-white rounded-b-lg px-4 gap-2 py-2">
         <h1 className="text-xs font-semibold ">{name}</h1>
     </div>
+        <p className="flex items-center rounded-t-lg justify-center text-center text-white bg-black absolute font-semibold text-xs 
+        opacity-0 w-[150px] h-[100px] hover:opacity-90">{Now[1]}</p>
 </a>
   )
 }

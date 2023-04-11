@@ -15,7 +15,7 @@ useEffect(() => {
   if (items) {
    setUrl(items);
   }
-  alert("Scroll down to see FullScreen Button")
+  alert("Attan min 5-10 sec video la pu zwe li")
 }, []);
 
   
