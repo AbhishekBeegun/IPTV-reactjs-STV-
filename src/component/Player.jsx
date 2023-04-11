@@ -2,7 +2,9 @@ import React from 'react'
 import { useState } from "react"
 import { useEffect } from "react"
 import { useLocation } from "react-router"
-import { Player ,Hls, DefaultUi,DefaultControls, PipControl  } from "@vime/react"
+import 'vidstack/styles/base.css';
+
+import { MediaOutlet, MediaPlayer } from '@vidstack/react';
 const Live = () => {
 
 
@@ -15,26 +17,25 @@ useEffect(() => {
   if (items) {
    setUrl(items);
   }
-  alert("Attan min 5-10 sec video la pu zwe li")
+  alert("Attan 5-10 sec video la pu LOAD")
 }, []);
 
   
   return (
     <div className="bg-black">   
       
-      <Player>
+      <MediaPlayer autoplay
+      src={{
+        src: `${Url}`,
+        type: 'application/x-mpegurl',
+      }}
 
-      <Hls version="latest">
-        <source data-src={Url} type="application/x-mpegURL" />
-      </Hls>
+  controls
+>
+  {/* ^ remove `controls` attribute if you're designing a custom UI */}
+  <MediaOutlet />
+</MediaPlayer>
 
-      <DefaultUi noControls>
-        {/* We setup the default controls and pass in any options. */}
-        <DefaultControls hideOnMouseLeave activeDuration={2000} />
-        <PipControl/>
-      </DefaultUi>
-
-      </Player>
     </div>
   )
 }

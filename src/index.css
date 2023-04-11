@@ -20,7 +20,5 @@
 * ::-webkit-scrollbar{
   display: none;
 }
-vm-player {
-  --vm-control-scale: 1.75;
-}
+
 

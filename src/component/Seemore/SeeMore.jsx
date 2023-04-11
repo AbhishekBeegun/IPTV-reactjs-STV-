@@ -8,7 +8,7 @@ const SeeMore = ({ShowCountry,counter,setcounter}) => {
   
          <button
         onClick={() => setcounter(counter+20)} 
-        className="bg-red-500 px-4 py-2 rounded-lg">More Channels</button>
+        className="bg-black text-white px-4 py-2 rounded-lg">More Channels</button>
         <p className="text-lg font-semibold">{counter}</p>
         </div> : <></> }
 

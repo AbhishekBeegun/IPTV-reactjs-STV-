@@ -6,8 +6,8 @@ const Navbar = ({ShowCountry,handleCountries}) => {
     <button onClick={() => handleCountries()}
      className="font-semibold text-lg flex items-center justify-center gap-2">
     <p
-     className="border-r-2 px-4">I P T V</p>
-    <span className="bg-red-600 rounded-lg px-2">LiveTV</span>
+     className="border-r-2 px-4">BEEGUN</p>
+    <span className="bg-red-600 rounded-lg px-2">TV</span>
     </button>
     {!ShowCountry ? <div>
   <button className="bg-red-500 py-2 px-4 rounded-lg font-semibold" 
