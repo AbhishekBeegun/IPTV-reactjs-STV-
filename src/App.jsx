@@ -27,10 +27,8 @@ function App() {
     const response = await axios("https://i.mjh.nz/SamsungTVPlus/app.json",
     )
     setIptv(response.data)
-    console.log(Iptv) 
-    setTimeout(() => {
+ 
     setLoadingScreen(false)      
-    }, 3000);
     // ...
   }
 
@@ -125,7 +123,7 @@ function handleCountries(){
       <Navbar ShowCountry={ShowCountry}
       handleCountries={handleCountries}/>
       
-    
+     
       <AllCountries 
       ShowCountry={ShowCountry}
       setShowCountry={setShowCountry}

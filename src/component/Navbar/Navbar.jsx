@@ -10,7 +10,7 @@ const Navbar = ({ShowCountry,handleCountries}) => {
     <span className="bg-red-600 rounded-lg px-2">TV</span>
     </button>
     {!ShowCountry ? <div>
-  <button className="bg-red-500 py-2 px-4 rounded-lg font-semibold" 
+  <button className="bg-red-500 py-2 px-2 rounded-lg font-semibold" 
   onClick={() => handleCountries()}>Switch Country</button>
   </div> : <></>}
     

@@ -17,7 +17,7 @@ useEffect(() => {
   if (items) {
    setUrl(items);
   }
-  alert("Attan 5-10 sec video la pu LOAD")
+  alert("WAIT 5-10 SEC video la pu LOAD IF NOT try later")
 }, []);
 
   
