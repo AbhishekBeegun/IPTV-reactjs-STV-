@@ -26,7 +26,7 @@ const USA = ({USchannels,setUsCounter,UsDisable}) => {
 
       <button disabled={UsDisable}
         onClick={() => setUsCounter((prev) => prev + 10)} 
-        className="bg-black text-white px-4 py-2 rounded-lg disabled:hidden">More Channels</button>
+        className="bg-yellow-500 text-black px-4 py-2 rounded-lg disabled:hidden">More Channels</button>
  
       </>
 
