@@ -1,7 +1,7 @@
 import React from 'react'
 import SingleChannel from "../SingleChannel"
 
-const USA = ({USchannels}) => {
+const USA = ({USchannels,setUsCounter,UsDisable}) => {
 
   return (
     <> 
@@ -23,6 +23,11 @@ const USA = ({USchannels}) => {
         ))}
 
       </div>
+
+      <button disabled={UsDisable}
+        onClick={() => setUsCounter((prev) => prev + 10)} 
+        className="bg-black text-white px-4 py-2 rounded-lg disabled:hidden">More Channels</button>
+ 
       </>
 
   )

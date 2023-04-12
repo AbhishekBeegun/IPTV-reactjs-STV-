@@ -6,7 +6,6 @@ import BackToTop from "./component/BackTop/BackToTop"
 import Loading from "./component/Loading"
 import Navbar from "./component/Navbar/Navbar"
 import AllChanels from "./component/Chanels/AllChanels"
-import SeeMore from "./component/Seemore/SeeMore"
 
 // import IPTVJSON from "./api/SAMTV.json"
 function App() {
@@ -20,8 +19,15 @@ function App() {
   const [USchannels, setUSchannels] = useState()
   const [UKMchannels, setUKMchannels] = useState()
   const [Frchannels, setFrchannels] = useState()
-  
-  const [counter, setcounter] = useState(10)
+  const [FrCounter, setFrCounter] = useState(10)
+  const [UsCounter, setUsCounter] = useState(10)
+  const [UkCounter, setUkCounter] = useState(10)
+
+  const [FrDisable, setFrDisable] = useState(false)
+  const [UsDisable, setUsDisable] = useState(false)
+  const [UkDisable, setUkDisable] = useState(false)
+
+
 
   const fetchData = async () =>  {
     const response = await axios("https://i.mjh.nz/SamsungTVPlus/app.json",
@@ -35,17 +41,22 @@ function App() {
   const FR = async () => {
     // await fetchData()
     const frchannel = Object.entries(Iptv.regions.fr.channels)    
-    setFrchannels(frchannel.slice(0,counter))
+    setFrchannels(frchannel.slice(0,FrCounter))
+    console.log(frchannel.length)
+
   }
   const US = async () => {
     // await fetchData()
     const Uschannel = Object.entries(Iptv.regions.us.channels)    
-    setUSchannels(Uschannel.slice(0,counter))
+    setUSchannels(Uschannel.slice(0,UsCounter))
+    console.log(Uschannel.length)
   }
   const UK = async () => {
     // await fetchData()
     const Ukchannel = Object.entries(Iptv.regions.gb.channels)    
-    setUKMchannels(Ukchannel.slice(0,counter))
+    setUKMchannels(Ukchannel.slice(0,UkCounter))
+    console.log(Ukchannel.length)
+
   }
   useEffect(() => {
     fetchData()
@@ -59,9 +70,28 @@ function App() {
   FR()
   US()
   UK()
+
+  function DisableFr() {
+    if(FrCounter >= 50){
+      setFrDisable(true)
+    }    
+  }
+  function DisableUs() {
+    if(UsCounter >= 240){
+      setUsDisable(true)
+    }    
+  }
+  function DisableUk() {
+    if(UkCounter >= 130){
+      setUkDisable(true)
+    }    
+  }
+  DisableFr()
+  DisableUk()
+  DisableUs()
   console.log("second fired")
 
-}, [counter]); 
+}, [FrCounter,UsCounter,UkCounter]); 
 
 // render or not
 
@@ -76,7 +106,6 @@ function handleCountries(){
   setShowFr(false)
   setShowUk(false)
   setShowUs(false)
-  setcounter(10)
 }
 
 // function USAchannels(){
@@ -133,17 +162,19 @@ function handleCountries(){
 
    
       <AllChanels
+      FrDisable={FrDisable}
+      UsDisable={UsDisable}
+      UkDisable={UkDisable}
       ShowFr={ShowFr}
       ShowUs={ShowUs}
       ShowUk={ShowUk}
       FRchannels={Frchannels}
       USchannels={USchannels}
       UKchannels={UKMchannels}
-      />
-      <SeeMore 
-      ShowCountry={ShowCountry} counter={counter} setcounter={setcounter}/>    
-
-       
+      setFrCounter={setFrCounter}
+      setUsCounter={setUsCounter}
+      setUkCounter={setUkCounter}
+      />  
        
       </> : <Loading/>   }
 

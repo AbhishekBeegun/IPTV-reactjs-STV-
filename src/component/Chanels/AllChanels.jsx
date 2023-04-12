@@ -3,14 +3,27 @@ import FRANCE from "../France/FRANCE"
 import USA from "../USA/USA"
 import UK from "../UK/UK"
 const AllChanels = ({ ShowFr,ShowUk,ShowUs
-,FRchannels,USchannels,UKchannels}) => {
+,FRchannels,USchannels,UKchannels,
+setFrCounter,
+setUsCounter,
+setUkCounter,
+FrDisable,UsDisable,UkDisable}) => {
   return (
     <>
-    {ShowFr ? <FRANCE FRchannels={FRchannels}/> : <></>}
+    {ShowFr ? <FRANCE
+    FrDisable={FrDisable}
+     FRchannels={FRchannels}
+     setFrCounter={setFrCounter}/> : <></>}
 
-    {ShowUs ? <USA USchannels={USchannels}/> : <></> }
+    {ShowUs ? <USA 
+    UsDisable={UsDisable}
+    USchannels={USchannels}
+    setUsCounter={setUsCounter}/> : <></> }
 
-    {ShowUk ? <UK UKchannels={UKchannels}/> : <></> }
+    {ShowUk ? <UK 
+    UkDisable={UkDisable}
+    UKchannels={UKchannels}
+    setUkCounter={setUkCounter}/> : <></> }
     </>
   )
 }
